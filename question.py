@@ -1,4 +1,5 @@
 import itertools
+import asyncio
 import re
 import time
 from collections import defaultdict
@@ -6,6 +7,9 @@ from collections import defaultdict
 from colorama import Fore, Style
 
 import search
+
+bot = commands.Bot(command_prefix='')
+bot.remove_command('help')
 
 punctuation_to_none = str.maketrans({key: None for key in "!\"#$%&\'()*+,-.:;<=>?@[\\]^_`{|}~�"})
 punctuation_to_space = str.maketrans({key: " " for key in "!\"#$%&\'()*+,-.:;<=>?@[\\]^_`{|}~�"})
